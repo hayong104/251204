@@ -18,7 +18,7 @@ app.innerHTML = `
         <button class="condition-card" data-condition="1">
           <div class="condition-label">조건 1</div>
           <div class="condition-text">
-            두 쌍의 대변이 각각 평행하하다.
+            두 쌍의 대변이 각각 평행하다.
           </div>
           <div class="condition-tag">기본 활동</div>
         </button>
