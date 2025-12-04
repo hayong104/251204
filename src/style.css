@@ -1,96 +1,170 @@
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
+  color: #0f172a;
+  background-color: #0f172a;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  background: radial-gradient(circle at top, #1e293b, #020617 55%);
+  color: #e5e7eb;
 }
 
 #app {
-  max-width: 1280px;
+  max-width: 960px;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  padding: 32px 16px 40px;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vanilla:hover {
-  filter: drop-shadow(0 0 2em #f7df1eaa);
+.page {
+  background: rgba(15, 23, 42, 0.9);
+  border-radius: 24px;
+  padding: 28px 24px 32px;
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  box-shadow:
+    0 24px 60px rgba(15, 23, 42, 0.75),
+    0 0 0 1px rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(18px);
 }
 
-.card {
-  padding: 2em;
+.page-header {
+  text-align: left;
+  margin-bottom: 24px;
 }
 
-.read-the-docs {
-  color: #888;
+.page-header h1 {
+  font-size: 2.1rem;
+  margin: 0 0 6px;
+  letter-spacing: -0.03em;
+  color: #f9fafb;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+.page-subtitle {
+  margin: 0;
+  font-size: 0.98rem;
+  color: #cbd5f5;
+}
+
+.condition-section {
+  margin-top: 24px;
+}
+
+.section-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 0 0 16px;
+  color: #e5e7eb;
+}
+
+.condition-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+.condition-card {
+  position: relative;
+  width: 100%;
+  text-align: left;
+  padding: 16px 16px 14px;
+  border-radius: 18px;
+  border: 1px solid rgba(148, 163, 184, 0.8);
+  background: radial-gradient(circle at top left, rgba(59, 130, 246, 0.2), rgba(15, 23, 42, 0.98));
+  color: inherit;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  transition:
+    transform 0.14s ease-out,
+    box-shadow 0.14s ease-out,
+    border-color 0.14s ease-out,
+    background 0.18s ease-out;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+.condition-card:hover {
+  transform: translateY(-2px);
+  border-color: #60a5fa;
+  box-shadow:
+    0 14px 35px rgba(37, 99, 235, 0.35),
+    0 0 0 1px rgba(37, 99, 235, 0.5);
+}
+
+.condition-card:focus-visible {
+  outline: 2px solid #60a5fa;
+  outline-offset: 3px;
+}
+
+.condition-card--disabled {
+  cursor: default;
+  opacity: 0.45;
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.98), rgba(30, 41, 59, 0.96));
+}
+
+.condition-card--disabled:hover {
+  transform: none;
+  border-color: rgba(148, 163, 184, 0.8);
+  box-shadow: none;
+}
+
+.condition-label {
+  font-size: 0.86rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #93c5fd;
+  margin-bottom: 4px;
+}
+
+.condition-text {
+  font-size: 0.98rem;
+  line-height: 1.5;
+  color: #e5e7eb;
+  margin-bottom: 8px;
+}
+
+.condition-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 9px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: rgba(15, 23, 42, 0.85);
+  color: #a5b4fc;
+  border: 1px solid rgba(129, 140, 248, 0.7);
+}
+
+.helper-text {
+  margin-top: 14px;
+  font-size: 0.86rem;
+  color: #9ca3af;
+}
+
+@media (max-width: 640px) {
+  #app {
+    padding: 20px 12px 28px;
   }
-  a:hover {
-    color: #747bff;
+
+  .page {
+    padding: 20px 18px 24px;
+    border-radius: 18px;
   }
-  button {
-    background-color: #f9f9f9;
+
+  .page-header h1 {
+    font-size: 1.7rem;
   }
 }
