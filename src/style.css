@@ -243,8 +243,25 @@ body {
 }
 
 .segment-line {
-  stroke: #ea580c;
+  stroke: #38bdf8;
   stroke-width: 2.4;
+}
+
+.quad-polygon {
+  fill: rgba(191, 219, 254, 0.2);
+  stroke: #2563eb;
+  stroke-width: 2.6;
+}
+
+.parallel-ruler {
+  stroke: rgba(37, 99, 235, 0.9);
+  stroke-width: 3;
+  stroke-dasharray: 6 4;
+  cursor: grab;
+}
+
+.parallel-ruler:active {
+  cursor: grabbing;
 }
 
 .activity-controls {
